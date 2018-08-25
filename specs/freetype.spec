@@ -1,34 +1,34 @@
 %{!?with_xfree86:%define with_xfree86 1}
 
-Name:               freetype
-Version:            2.9.1
-Release:            1%{?dist}
-Summary:            A free and portable font rendering engine
-License:            (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
-Group:              System Environment/Libraries
-URL:                https://www.freetype.org
+Name:                   freetype
+Version:                2.9.1
+Release:                1%{?dist}
+Summary:                A free and portable font rendering engine
+License:                (FTL or GPLv2+) and BSD and MIT and Public Domain and zlib with acknowledgement
+Group:                  System Environment/Libraries
+URL:                    https://www.freetype.org
 
-Source:             https://download.savannah.gnu.org/releases/freetype/freetype-%{version}.tar.bz2
-Source1:            https://download.savannah.gnu.org/releases/freetype/freetype-doc-%{version}.tar.bz2
-Source2:            https://download.savannah.gnu.org/releases/freetype/ft2demos-%{version}.tar.bz2
-Source3:            ftconfig.h
+Source:                 https://download.savannah.gnu.org/releases/freetype/freetype-%{version}.tar.bz2
+Source1:                https://download.savannah.gnu.org/releases/freetype/freetype-doc-%{version}.tar.bz2
+Source2:                https://download.savannah.gnu.org/releases/freetype/ft2demos-%{version}.tar.bz2
+Source3:                ftconfig.h
 
-Patch0:             freetype-2.3.0-enable-spr.patch
+Patch0:                 freetype-2.3.0-enable-spr.patch
 # Enable otvalid and gxvalid modules
-Patch1:             freetype-2.2.1-enable-valid.patch
+Patch1:                 freetype-2.2.1-enable-valid.patch
 # Enable additional demos
-Patch2:             freetype-2.5.2-more-demos.patch
-Patch3:             freetype-2.6.5-libtool.patch
-Patch4:             freetype-2.8-multilib.patch
-Patch5:             freetype-2.9-ftsmooth.patch
+Patch2:                 freetype-2.5.2-more-demos.patch
+Patch3:                 freetype-2.6.5-libtool.patch
+Patch4:                 freetype-2.8-multilib.patch
+Patch5:                 freetype-2.9-ftsmooth.patch
 
-BuildRequires:      libX11-devel
-BuildRequires:      libpng-devel
-BuildRequires:      zlib-devel
-BuildRequires:      bzip2-devel
+BuildRequires:          libX11-devel
+BuildRequires:          libpng-devel
+BuildRequires:          zlib-devel
+BuildRequires:          bzip2-devel
 
-Provides:           %{name}-bytecode
-Provides:           %{name}-subpixel
+Provides:               %{name}-bytecode
+Provides:               %{name}-subpixel
 
 %description
 The FreeType engine is a free and portable font rendering
@@ -43,9 +43,9 @@ text-rendering library.
 # -------------------------------------------------------------------------------------------------------------------- #
 
 %package demos
-Summary:            A collection of FreeType demos
-Group:              System Environment/Libraries
-Requires:           %{name} = %{version}-%{release}
+Summary:                A collection of FreeType demos
+Group:                  System Environment/Libraries
+Requires:               %{name} = %{version}-%{release}
 
 %description demos
 The FreeType engine is a free and portable font rendering
@@ -58,10 +58,10 @@ small utilities showing various capabilities of the FreeType library.
 # -------------------------------------------------------------------------------------------------------------------- #
 
 %package devel
-Summary:            FreeType development libraries and header files
-Group:              Development/Libraries
-Requires:           %{name} = %{version}-%{release}
-Requires:           pkgconf%{?_isa}
+Summary:                FreeType development libraries and header files
+Group:                  Development/Libraries
+Requires:               %{name} = %{version}-%{release}
+Requires:               pkgconf%{?_isa}
 
 %description devel
 The freetype-devel package includes the static libraries and header files
